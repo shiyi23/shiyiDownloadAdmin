@@ -30,7 +30,7 @@ void win_downLoad(std::string& downloadURL, int num)
 
 //NUMT为全局常量4
 const char* const urls[NUMT] = {
-
+      //Linux环境下测试文本的下载，以下是下载URL
       "https://curl.se/",
 
       "ftp://cool.haxx.se/",
@@ -88,6 +88,7 @@ int main(int argc, char** argv)
 
 int main()
 {
+    //windows环境下测试图片的下载，以下是图片下载URL
     std::vector<std::string> urlVector{ "https://unsplash.com/photos/aoiUPcoLbBk/download?force=true", "https://unsplash.com/photos/0qGnW6iakaE/download?force=true",
     "https://unsplash.com/photos/fWDe78O7-Ks/download?force=true", "https://www.pexels.com/photo/4652060/download/?search_query=&tracking_id=b3xnayxjgnc" };
     
@@ -101,6 +102,7 @@ int main()
     {
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
+        //加锁防止多个线程同时访问、修改数据
         valMutex0.lock();
         std::string target_url = urlVector.back();
         urlVector.pop_back();
