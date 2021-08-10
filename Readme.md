@@ -6,4 +6,5 @@
 ### Linux
 笔者在本人的Ubuntu18.04虚拟机上用Visual Studio Code编写，shell终端使用
 > gcc -o linDown linuxDownload.c -lcurl -lpthread
+
 命令编译、链接生成可执行文件，之后执行生成可执行文件即可(即使用命令./linDown).
