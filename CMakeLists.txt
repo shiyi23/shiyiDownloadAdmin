@@ -9,3 +9,5 @@ project ("shiyiDownloadAdmin")
 add_executable (shiyiDownloadAdmin "shiyiDownloadAdmin.cpp" "shiyiDownloadAdmin.h")
 
 # TODO: Add tests and install targets if needed.
+    find_package(CURL CONFIG REQUIRED)
+    target_link_libraries(shiyiDownloadAdmin public CURL::libcurl)

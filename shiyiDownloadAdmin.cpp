@@ -8,9 +8,10 @@
 #pragma comment(lib, "urlmon.lib")
 #include <iostream>
 #include <mutex>
-//以下两个库是为了兼容Linux版本（C语言实现）
+//以下三个头文件是为了兼容Linux版本（C语言实现）
 #include <stdio.h>
 #include <string.h>
+#include <curl/curl.h>
 #define NUMT 4
 
 //******************Windows版本******************
@@ -23,11 +24,6 @@ void win_downLoad(std::string& downloadURL, int num)
 //******************Linux版本******************
 
 /**
-* 要包含的头文件：
-* #include <stdio.h>
-  #include <string.h>
-  #include <curl/curl.h>
-
 //NUMT为全局常量4
 const char* const urls[NUMT] = {
       //Linux环境下测试文本的下载，以下是下载URL
